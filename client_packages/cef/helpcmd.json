@@ -1,0 +1,306 @@
+{
+    "data": [
+        {
+            "cmd":"/report",
+            "descr":"Make a complaint to the administration.",
+            "category":"Basic"        },  
+		{
+            "cmd":"/password",
+            "descr":"Change Password",
+			"category":"Basic"        },
+		{
+            "cmd":"/myguest",
+            "descr":"Enter your personal house without opening the door.",
+			"category":"Basic"        },
+		{
+            "cmd":"/buybiz",
+            "descr":"Buy business (you need to be on a business marker you want to buy.",
+			"category":"Basic"        },
+		{
+            "cmd":"/sellbiz [id] [Cost]",
+            "descr":"Sell business player.",
+			"category":"Basic"        },
+		{
+            "cmd":"/time",
+            "descr":"Check condemnation / prison time.",
+			"category":"Basic"        },
+		{
+            "cmd":"/dice [id] [quantity]",
+            "descr":"Dice.",
+            "category":"Basic"        },
+		{
+            "cmd":"/findtrailer",
+            "descr":"Find trailer (trucker).",
+			"category":"Basic"        },
+		{
+            "cmd":"/q",
+            "descr":"Quick shutdown from server.",
+			"category":"Basic"        },
+		{
+            "cmd":"Key 'G'",
+            "descr":"Interactive menu.",
+			"category":"Basic"        },
+		{
+            "cmd":"Key 'N'",
+            "descr":"Speak the microphone.",
+			"category":"Basic"        },
+		{
+            "cmd":"Key 'I'",
+            "descr":"Open inventory and character statistics.",
+			"category":"Basic"        },
+		{
+            "cmd":"Key 'M'",
+            "descr":"Telephone.",
+			"category":"Basic"        },
+		{
+            "cmd":"Key 'L'",
+            "descr":"Open / close the car.",
+			"category":"Basic"        },
+		{
+            "cmd":"Key 'B'",
+            "descr":"Start / drowning the engine (located in the car).",
+			"category":"Basic"        },
+		{
+            "cmd":"Key 'U'",
+            "descr":"List of animations.",
+			"category":"Basic"        },
+		{
+            "cmd":"Key '5'",
+            "descr":"Show / hide player ID.",
+			"category":"Basic"        },
+		{
+            "cmd":"Key '6'",
+            "descr":"Cruise control (located in the car).",
+			"category":"Basic"        },
+		{
+            "cmd":"Key 'F10'",
+            "descr":"Help.",
+			"category":"Basic"        },
+		{
+            "cmd":"Key 'F9'",
+            "descr":"Donat-Panel.",
+			"category":"Basic"        },
+		{
+            "cmd":"Key 'F5'",
+            "descr":"Enable / disable HUD.",
+			"category":"Basic"        },
+		{
+            "cmd":"Key 'F1'",
+            "descr":"Pause menu Rage.",
+			"category":"Basic"        },
+		{
+            "cmd":"Key 'T'",
+            "descr":"Open chat.",
+			"category":"Chat"        },
+		{
+            "cmd":"/b",
+            "descr":"Write in OOC chat.",
+			"category":"Chat"        },
+		{
+            "cmd":"/me",
+            "descr":"Describe actions that do not have animations.Example: / Me took a handkerchief and wiped the sweat",
+			"category":"Chat"        },
+		{
+            "cmd":"/do",
+            "descr":"Describe the environment (written from the capital letter and at the end there is a point. Example: / Do On the street you will see several cars.",
+			"category":"Chat"        },
+		{
+            "cmd":"/try",
+            "descr":"An attempt is described to act with a random result.Example: / Try After the search for a person, I was able to find insects on clothes.",
+			"category":"Chat"        },
+		{
+            "cmd":"/todo",
+            "descr":"Playing words + actions.Example: / Todo nice to meet you * politely stretching hand to the opposite person",
+			"category":"Chat"        },
+		{
+            "cmd":"/s",
+            "descr":"Shout.",
+			"category":"Chat"        },
+		{
+            "cmd":"/f",
+            "descr":"Fractional Chat",
+			"category":"Chat"        },
+		{
+            "cmd":"/dep",
+            "descr":"General chat of all state fractions.",
+			"category":"Chat"        },
+		{
+            "cmd":"/gov",
+            "descr":"Wasworm",
+			"category":"Chat"        },
+		{
+            "cmd":"/m",
+            "descr":"Megaphone",
+			"category":"Чат | LSPD | FIB | NG"        },
+		{
+            "cmd":"/call",
+            "descr":"SMS.",
+			"category":"Chat"        },
+		{
+            "cmd":"/fontsize",
+            "descr":"Amendment Size Font Chat.",
+			"category":"Chat"        },
+		{
+            "cmd":"/pagesize",
+            "descr":"Change the number of chat lines.",
+			"category":"Chat"        },
+		{
+            "cmd":"/chatalpha",
+            "descr":"Switch Chat translation.",
+			"category":"Chat"        },
+		{
+            "cmd":"/timestamp",
+            "descr":"Displaying time in chat.",
+			"category":"Chat"        },
+		{
+            "cmd":"/buyfuel [cantidad]",
+            "descr":"Buy fuel at the gas station.",
+			"category":"Mechanic"        },
+		{
+            "cmd":"/sellfuel [id] [cantidad] [цена за литр]",
+            "descr":"Sell fuel player.",
+			"category":"Mechanic"        },
+		{
+            "cmd":"/ma",
+            "descr":"Take a challenge mechanic.",
+			"category":"Mechanic"        },
+		{
+            "cmd":"/repair [id] [стоимость]",
+            "descr":"Отремонтировать автомобиль.",
+			"category":"Mechanic"        },
+		{
+            "cmd":"/ta [id]",
+            "descr":"Take the challenge.",
+			"category":"Charges"        },
+		{
+            "cmd":"/tprice [id] [Cost]",
+            "descr":"Suggest the fare.",
+			"category":"Charges"        },
+		{
+            "cmd":"/ctaxi",
+            "descr":"Cancel call.",
+			"category":"Charges"        },
+		{
+            "cmd":"/cmechanic",
+            "descr":"Cancel call.",
+			"category":"Механик"        },
+		{
+            "cmd":"/orders",
+            "descr":"Order list.",
+			"category":"Trucker"        },
+		{
+            "cmd":"/t",
+            "descr":"Falcountations walking.",
+			"category":"Trucker"        },
+		{
+            "cmd":"/su [passport] [Rosewear level] [reason]",
+            "descr":"Rosant.",
+			"category":"LSPD | BCSD | FIB"        },
+		{
+            "cmd":"/arrest [id]",
+            "descr":"Arrest player (land in the CPZ).",
+			"category":"LSPD | BCSD | FIB"        },
+		{
+            "cmd":"/rfp [id]",
+            "descr":"Free the player from the CPP.",
+			"category":"LSPD | BCSD | FIB"        },
+		{
+            "cmd":"/pd [id]",
+            "descr":"Take the challenge.",
+			"category":"LSPD | BCSD | FIB"        },
+		{
+            "cmd":"/givegunlic [id] [Cost]",
+            "descr":"Sell a license for weapons.",
+			"category":"LSPD | BCSD | FIB"       },
+		{
+            "cmd":"/takegunlic [id] ",
+            "descr":"Send a license to weapons.",
+			"category":"LSPD | BCSD | FIB"        },
+		{
+            "cmd":"/pull [id]",
+            "descr":"Pull the player from the car.",
+			"category":"LSPD | FIB | Мафия | NG | GOV"        },
+		{
+            "cmd":"/incar [id]",
+            "descr":"Put the player in the car.",
+			"category":"LSPD | BCSD | FIB | Mafia | NG | GOV"        },
+		{
+            "cmd":"/warg",
+            "descr":"Enable emergency mode.",
+			"category":"LSPD | BCSD | FIB"        },
+		{
+            "cmd":"/openstock /closestock ",
+            "descr":"Open / Close Warehouse.",
+			"category":"LSPD | BCSD | FIB | EMS | NG | GOV | Gang | Mafia"        },
+		{
+            "cmd":"Key 'X'",
+            "descr":"Put your handcuffs.",
+			"category":"LSPD | BCSD | FIB | Мафия | NG | GOV"        },
+		{
+            "cmd":"Key 'Z'",
+            "descr":"Lead someone in handcuffs.",
+			"category":"LSPD | BCSD | FIB | Мафия | NG | GOV"        },
+		{
+            "cmd":"Key 'U'",
+            "descr":"[In a police car] Police computer.",
+			"category":"LSPD | BCSD | FIB"        },
+		{
+            "cmd":"Key 'G'",
+            "descr":"Interaction with the player (search, view documents, etc.).",
+			"category":"LSPD | BCSD | FIB"        },
+		{
+            "cmd":"/heal [id] [Cost]",
+            "descr":"Treatment account.",
+			"category":"EMS"        },
+		{
+            "cmd":"/ems [id]",
+            "descr":"Take a call from the player.",
+			"category":"EMS"        },
+		{
+            "cmd":"/givemedlic [id]",
+            "descr":"Write a medical map player.",
+			"category":"EMS"        },
+		{
+            "cmd":"/givepmlic [id] [Cost]",
+            "descr":"Sell Feldsher license",
+			"category":"EMS"        },
+		{
+            "cmd":"Botón 'F7'",
+            "descr":"Publish the announcement.",
+			"category":"WNEWS"        },
+		{
+            "cmd":"/capture",
+            "descr":"Start seizing the territory.",
+			"category":"Gang"        },
+		{
+            "cmd":"Botón 'G'",
+            "descr":"Interaction with a player (steal, put a bag).",
+			"category":"Mafia | Gang"        },
+		{
+            "cmd":"/bizwar",
+            "descr":"Start a business capture.",
+			"category":"Mafia"        },
+		{
+            "cmd":"/takebiz",
+            "descr":"Take control of business.",
+			"category":"Mafia"        },
+		{
+            "cmd":"/respawn",
+            "descr":"RESPAWN car fractions.",
+			"category":"Leader"        },
+		{
+            "cmd":"/setrank [id] [rank]",
+            "descr":"Change player rank.",
+			"category":"Leader"        },
+		{
+            "cmd":"/invite [ID]",
+            "descr":"Invite a fraction.",
+			"category":"Leader"        },
+		{
+            "cmd":"/uninvite [ID]",
+            "descr":"Dismissal of the player from the fraction.",
+			"category":"Leader"
+        }
+
+    ]
+}

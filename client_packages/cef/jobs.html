@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Jobs</title>
+    <style>
+        body {
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            font-family: "Ubuntu", sans-serif;
+            margin: 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #555;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ddd;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/JobsMenus.css">
+    <link rel="stylesheet" href="css/fmenu.css">
+    <link rel="stylesheet" href="fonts/icons.css">
+    <script src="js/vue.js"></script>
+</head>
+<body style="display:none">
+    <div class="JobsEinfo" v-if="active" style="margin-left: 38%; bottom: 100px; position: absolute; ">
+        <table style="color: white; font-weight: 900; font-size: 30px;">
+            <tr>
+                <td style="padding: 7px;">Press</td>
+                <td style="color: white; background: rgb(86 86 86); padding: 4px 9px 4px 10px; border-radius: 6px;">E</td>
+                <td style="padding: 7px;">for interact</td>
+            </tr>
+        </table>
+    </div>
+    <div class="JobStatsInfo" v-if="active" style="font-weight: 900;box-shadow: 0 0px 20px rgb(0 0 0 / 43%);border-right: 5px solid #fbb80499;top: 100px;right: 40px;color: white;background: #00000082;width: 200px;position: absolute;">
+        <div style="font-size: 18px;text-align: center;padding: 8px 0px 10px 0px;background: black;">Статистика</div>
+        <div style="text-align: left;padding: 10px;">
+            <p style="margin:0px;">Earned money: {{money}}$</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Грузчик -->
+    <div class="Loader" v-if="active">
+        <div class="header"><h1>{{header}}</h1><i class="cancel" @click="exit"></i></div>
+        <div class="content">
+            <div class="block">
+                <div class="left">
+                    <div class="imgblock"><img src="./images/joblist/loader.jpg" alt=""></div>
+                </div>
+                <div class="right">
+                    <p class="info">A loader is a profession that mainly uses only the muscular physical strength of a person to perform simple work operations for moving goods: loading, unloading, tilting, rolling and lifting.</p>
+                    <p class="price">The salary: {{money}}$</p>
+                </div>
+            </div>
+            <div v-if="work == 1" style="margin-top: 8px;width:45%;float:left;">
+                <div class="enterLoader" v-on:click="enterJob(-1)">Finish work</div>
+            </div>
+            <div v-else style="margin-top: 8px;width:45%;float:left;">
+                <div class="enterLoader" v-on:click="enterJob(1)">Get Started</div>
+            </div>
+
+            <div v-if="jobid == 9" style="margin-top: 8px;width:45%;float:right;">
+                <div class="enterLoader" v-on:click="selectJob(-1)">Quit</div>
+            </div>
+            <div v-else style="margin-top: 8px;width:45%;float:right;">
+                <div class="enterLoader" v-on:click="selectJob(9)">Get settled</div>
+            </div>
+        </div>
+    </div>
+	<!-- Строитель -->
+    <div class="Construction" v-if="active">
+        <div class="header"><h1>{{header}}</h1><i class="cancel" @click="exit"></i></div>
+        <div class="content">
+            <div class="block">
+                <div class="left">
+                    <div class="imgblock"><img src="./images/joblist/Construction.jpg" alt=""></div>
+                </div>
+                <div class="right">
+                    <p class="info">A construction worker is a worker engaged in the physical construction of the built environment and its infrastructure. The term is generic, generic, and most of these workers are basically described by the specific level and type of work they do.</p>
+                    <p class="price">The salary: {{money}}$</p>
+                </div>
+            </div>
+            <div v-if="work == 1" style="margin-top: 8px;width:45%;float:left;">
+                <div class="enterConstruction" v-on:click="enterJob(-1)">Finish work</div>
+            </div>
+            <div v-else style="margin-top: 8px;width:45%;float:left;">
+                <div class="enterConstruction" v-on:click="enterJob(1)">Get Started</div>
+            </div>
+
+            <div v-if="jobid == 12" style="margin-top: 8px;width:45%;float:right;">
+                <div class="enterConstruction" v-on:click="selectJob(-1)">Quit</div>
+            </div>
+            <div v-else style="margin-top: 8px;width:45%;float:right;">
+                <div class="enterConstruction" v-on:click="selectJob(12)">Get settled</div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- Драйвер -->
+    <div class="JobStatsInfoDiver" v-if="active" style="font-weight: 900;box-shadow: 0 0px 20px rgb(0 0 0 / 43%);border-right: 5px solid #fbb80499;top: 100px;right: 40px;color: white;background: #00000082;width: 200px;position: absolute;">
+        <div style="font-size: 18px;text-align: center;padding: 8px 0px 10px 0px;background: black;">Statistics</div>
+        <div style="text-align: left;padding: 10px;">
+            <p style="margin:0px;">Earned money: {{money}}$</p><br />
+            <p style="margin:0px;">Collected: {{obj}} of {{obji}}</p>
+        </div>
+    </div>
+    <div class="Diver" v-if="active">
+        <div class="header"><h1>{{header}}</h1><i class="cancel" @click="exit"></i></div>
+        <div class="content">
+            <div class="block">
+                <div class="left">
+                    <div class="imgblock"><img src="./images/joblist/Diver.jpg" alt=""></div>
+                </div>
+                <div class="right">
+                    <p class="info">Diver - a specialist who is able to perform work under water in diving equipment and is admitted to the production of diving descents in the prescribed manner. The profession of a diver is one of the professions with especially harmful and especially difficult working conditions.</p>
+                    <p class="price">The salary: {{money}}$</p>
+                </div>
+            </div>
+            <div v-if="work == 1" style="margin-top: 8px;width:45%;float:left;">
+                <div class="enterDiver" v-on:click="enterJob(-1)">Finish work</div>
+            </div>
+            <div v-else style="margin-top: 8px;width:45%;float:left;">
+                <div class="enterDiver" v-on:click="enterJob(1)">Get Started</div>
+            </div>
+
+            <div v-if="jobid == 13" style="margin-top: 8px;width:45%;float:right;">
+                <div class="enterDiver" v-on:click="selectJob(-1)">Quit</div>
+            </div>
+            <div v-else style="margin-top: 8px;width:45%;float:right;">
+                <div class="enterDiver" v-on:click="selectJob(13)">Get settled</div>
+            </div>
+        </div>
+    </div>
+	 <!-- Каменщик -->
+    <div class="Miner" v-if="active">
+        <div class="header"><h1>{{header}}</h1><i class="cancel" @click="exit"></i></div>
+        <div class="content">
+            <div class="block">
+                <div class="left">
+                    <div class="imgblock"><img src="./images/joblist/miner.png" alt=""></div>
+                </div>
+                <div class="right">
+                    <p class="info">
+                        Pay for the first point: {{money}}$<br />
+                        Pay for the second: {{money2}}$<br />
+                        Pay for the third: {{money3}}$<br />
+                    </p>
+                </div>
+            </div>
+            <div v-if="work == 1" style="margin-top: 8px;width:45%;float:left;">
+                <div class="enterMiner" v-on:click="enterJob(-1)">Finish work</div>
+            </div>
+            <div v-else style="margin-top: 8px;width:45%;float:left;">
+                <div class="enterMiner" v-on:click="enterJob(1)">Get Started</div>
+            </div>
+            <div v-if="jobid == 11" style="margin-top: 8px;width:45%;float:right;">
+                <div class="enterMiner" v-on:click="selectJob(-1)">Quit</div>
+            </div>
+            <div v-else style="margin-top: 8px;width:45%;float:right;">
+                <div class="enterMiner" v-on:click="selectJob(11)">Get settled</div>
+            </div>
+        </div>
+    </div>
+	
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/dial.js"></script>
+    <script src="js/JobsMenus.js"></script>
+</body>
+</html>

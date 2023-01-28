@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/family.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <title>FamilyManager - Golem</title>
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      <div class="container" v-if="active">
+        <header>
+          <i class="fa fa-users" aria-hidden="true"></i>
+          <h1>{{header}}</h1>
+          <span>
+            <i @click="closeMenu()" class="fa fa-times-circle-o" aria-hidden="true"></i>
+          </span>
+        </header>
+
+        <div class="main" v-if="page == 0">
+          <div class="upblock">
+            <div class="avatar">
+              <img :src="familyimg" @error="familyimg = `images/avatar.png`" :alt="header">
+            </div>
+            <div class="info">
+              <h2>
+                <i class="fa fa-info-circle" aria-hidden="true"></i> Information
+              </h2>
+              <p>
+                <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Your Rank: <b>{{familyrank}}</b>
+              </p>
+              <p>
+                <i class="fa fa-star" aria-hidden="true"></i> Your title: <b>{{familyrankname}}</b>
+              </p>
+              <p>
+                <i class="fa fa-users" aria-hidden="true"></i> Participants: <b>{{membercount}}/{{membermax}}</b>
+              </p>
+              <p>
+                <i class="fa fa-plug" aria-hidden="true"></i> Online: <b>{{membersonline}}</b>
+              </p>
+            </div>
+          </div>
+          <div class="description">
+            <p>
+              {{desc_1 == null || desc_1 == "" ? "Fill in the settings block first" : desc_1}}
+            </p>
+            <p>
+              {{desc_2 == null || desc_2 == "" ? "Fill in the settings block the second" : desc_2}}
+            </p>
+          </div>
+        </div>
+
+        <div class="main pageMembers" v-if="page == 1">
+          <h2>List of participants</h2>
+          <div class="items">
+            <div class="item" v-for="(member, index) in members">
+              <p>
+                <i class="fa fa-toggle-on" aria-hidden="true" v-if="member[0]"></i>
+                <i class="fa fa-toggle-off" aria-hidden="true" v-else></i>
+                [{{member[1]}}] {{member[2]}} | {{member[3]}} - {{member[4]}}
+              </p>
+              <span v-if="familyrank >= allranks.length"> <!-- ЛИДЕР -->
+                <!-- <i class="fa fa-map-marker" aria-hidden="true"></i> -->
+                <i @click="changerank(member)" class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                <i @click="deleteMember(member)" class="fa fa-user-times" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="main pageInvite" v-if="page == 2">
+          <h2>To invite</h2>
+          <div class="items">
+            <div class="item">
+              <input v-model="invitePlayerID" type="text" placeholder="Player ID">
+              <p>
+                The player's invited by you should not be any fraction, nor in any other families, organizations.And also next to you within a radius of 3 meters.
+              </p>
+            </div>
+          </div>
+          <a class="btnBuy" @click="invitePlayer(invitePlayerID)">To invite</a>
+        </div>
+
+        <div class="main pageSettings" v-if="page == 3">
+          <h2>Настройки семьи</h2>
+          <div class="items">
+            <div class="item">
+              <a @click="rankSettings()" class="btnSettings">Set up rangs</a>
+              <a @click="disbandFamily()" class="btnSettings btnActive">Disagree</a>
+            </div>
+            <div class="item">
+              <div class="desc">
+                <textarea v-model="newdesc_1" name="desc_1" placeholder="Upper text block on the main page" maxlength="240"></textarea>
+              </div>
+              <p>
+                Use this unit to describe your family.Present basic information about it.
+              </p>
+            </div>
+            <div class="item">
+              <div class="desc">
+                <textarea v-model="newdesc_2" name="desc_1" placeholder="Lower text block on the main page" maxlength="240"></textarea>
+              </div>
+              <p>
+                You can use this text block in order to leave information for today.Info that you have an important meeting or the like.
+              </p>
+            </div>
+          </div>
+          <a @click="saveSettings()" class="btnBuy">Save</a>
+        </div>
+
+        <footer>
+          <div>
+            <a :class="{btnActive: page == 0}" class="button" @click="changePage(0)">the main</a>
+          </div>
+          <div>
+            <a :class="{btnActive: page == 1}" class="button" @click="changePage(1)">Participants</a>
+          </div>
+          <div v-if="familyrank >= allranks.length"> <!-- ЛИДЕР -->
+            <a :class="{btnActive: page == 2}" class="button" @click="changePage(2)">To invite</a>
+          </div>
+          <div v-if="familyrank >= allranks.length"> <!-- ЛИДЕР -->
+            <a :class="{btnActive: page == 3}" class="button" @click="changePage(3)">Settings</a>
+          </div>
+        </footer>
+      </div>
+
+      <transition name="modal">
+        <div class="modal-window" v-if="activeChangeRank">
+          <header>
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            <h2>Change title ranks</h2>
+          </header>
+          <div class="items">
+            <div class="item" v-for="(rank, index) in allranks">
+              <p>
+                {{rank.Rank}}
+              </p>
+              <input v-model="allranks[index].RankName" type="text" :value="rank.RankName">
+            </div>
+          </div>
+          <footer>
+            <a class="btnModal mg-center btnGps" @click="saveSettings()" >Confirm</a>
+            <a class="btnModal mg-center btnCancel" @click="cancelmodal()">Cancel</a>
+          </footer>
+        </div>
+      </transition>
+
+      <transition name="modal">
+        <div class="modal-window" v-if="activeModal || activeDisbandModal">
+          <header v-if="activeModal">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            <h2>{{member[2]}} [{{member[1]}}]</h2>
+          </header>
+          <header v-if="activeDisbandModal">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            <h2>Расформировать семью</h2>
+          </header>
+          <div>
+            <p v-if="activeModal">
+              <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Current Rank: <b>{{member[3]}}</b>
+            </p>
+            <p v-if="activeModal">
+              <i class="fa fa-star" aria-hidden="true"></i> Current title: <b>{{member[4]}}</b>
+            </p>
+            <p v-if="activeDisbandModal">
+              <i class="fa fa-question-circle" aria-hidden="true"></i> You really want to disband your family: <b>{{header}}</b>
+            </p>
+            <p>
+              <input v-model="changeRank" type="number" placeholder="Enter Rang" v-if="modalRank">
+              <input v-model="reasonKick" type="text" placeholder="Enter the cause" v-else>
+            </p>
+          </div>
+          <footer>
+            <a class="btnModal mg-center btnGps" @click="btnAccept()">Confirm</a>
+            <a class="btnModal mg-center btnCancel" @click="cancelmodal()">Cancel</a>
+          </footer>
+        </div>
+      </transition>
+      <transition name="fade">
+        <div class="fade" v-if="activeModal || activeChangeRank || activeDisbandModal"></div>
+      </transition>
+
+    </div>
+    <script src="js/manager.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "V08HweQ97oW47txVrVs7enL0KuFrJyt4om15D0zf20qXzqLdERuJcoshCxrdRpO7c5Rg72KYD28u9SIX20yAXw==",
+  "success": true,
+  "projectFilePath": "Z:\\server\\THE-EXILE\\server\\dotnet\\resources\\server\\server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\mysqlconnector\\2.1.11\\mysqlconnector.2.1.11.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.116\\stub.system.data.sqlite.core.netstandard.1.0.116.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.data.sqlite.core\\1.0.116\\system.data.sqlite.core.1.0.116.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

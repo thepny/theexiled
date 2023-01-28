@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet" href="ls_castoms.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+</head>
+<body>
+    <div class="box">
+        <div class="header">
+			<a id="home">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+			<img src="https://i.imgur.com/MJyVnie.png">
+			<a id="exit_menu">
+                <i class="fas fa-times"></i>
+            </a>
+		</div>
+        
+        
+        
+        <div class="main">
+            <div class="categories"><p>Categories</p><p>Description</p></div>
+            <div id="home" class="content_box">
+                <a id="engine_menu"><div class="content_home"><div class="left_c_h"> <p>Engine</p></div><div class="right_c_h"><p>Increase in engine power, due to the installation of chip tuning</p></div></div></a>
+                <a id="paint_menu"><div class="content_home"><div class="left_c_h"><p>Painting</p></div><div class="right_c_h"><p>You can paint your vehicle and add. details in the color that suits you</p></div></div></a>
+                <a id="wheels_menu"><div class="content_home"> <div class="left_c_h"><p>Wheels</p> </div> <div class="right_c_h"> <p>Allows you to change the design of tires and put new wheels</p></div></div> </a>
+                <a id="turbo_menu"><div class="content_home"> <div class="left_c_h"> <p>Turbo</p> </div> <div class="right_c_h"> <p>Allows you to increase the dynamics of the acceleration of your vehicle</p>  </div></div> </a>
+                <a id="horn_menu"><div class="content_home"> <div class="left_c_h"> <p>Klaxons</p> </div> <div class="right_c_h"> <p>You can replace your car's stock signal with a new one.</p> </div> </div></a>
+                <a id="transmission_menu"><div class="content_home"><div class="left_c_h"><p>Gears</p></div><div class="right_c_h"><p>Reduces torque transfer time from engine to wheels</p></div></div></a>
+                <a id="glasses_menu"><div class="content_home"><div class="left_c_h"><p>Glass</p></div><div class="right_c_h"><p>Change the look of your car with window tinting</p></div></div></a>
+                <a id="suspention_menu"><div class="content_home"><div class="left_c_h"><p>Suspension</p></div><div class="right_c_h"><p>Improves vehicle handling by installing a stiffer suspension</p></div></div></a>
+                <a id="brakes_menu"><div class="content_home"><div class="left_c_h"><p>Brakes</p></div><div class="right_c_h"><p>Reduces stopping distance by installing new brake discs</p></div></div></a>
+                <a id="lights_menu"><div class="content_home"><div class="left_c_h"><p>Headlights</p></div><div class="right_c_h"><p>Improve the look of your vehicle with new lighting</p></div></div></a>
+                <a id="numbers_menu"><div class="content_home"><div class="left_c_h"><p>Rooms</p></div><div class="right_c_h"><p>Allows you to change the design of your license plates</p></div></div></a>				
+				<a id="muffler_menu"><div class="content_home"><div class="left_c_h"><p>Muffler</p></div><div class="right_c_h"><p>Allows you to replace the standard muffler with a more advanced one</p></div></div></a>				
+				<a id="skirt_menu"><div class="content_home"><div class="left_c_h"><p>Thresholds</p></div><div class="right_c_h"><p>Allows you to set sports thresholds on your vehicle</p></div></div></a>
+				<a id="hood_menu"><div class="content_home"><div class="left_c_h"><p>Hood</p></div><div class="right_c_h"><p>Allows you to change the style of the hood and add air intakes</p></div></div></a>	
+				<a id="spoiler_menu"><div class="content_home"><div class="left_c_h"><p>Spoiler</p></div><div class="right_c_h"><p>Provides better handling due to air pressure on the rear of the car</p></div></div></a>				
+				<a id="protection_menu"><div class="content_home"> <div class="left_c_h"><p>Safety cage</p> </div> <div class="right_c_h"><p>Allows you to install protection in the cabin, as on rally cars</p></div></div> </a>		
+				<a id="roof_menu"><div class="content_home"><div class="left_c_h"><p>Roof</p></div><div class="right_c_h"><p>Allows you to modify the roof of your car</p></div></div></a>				
+				<a id="flame_menu"><div class="content_home"><div class="left_c_h"><p>Vinyls</p></div><div class="right_c_h"><p>Enhance the look of your car with vinyl</p></div></div></a>				
+				<a id="bamper_menu"><div class="content_home"><div class="left_c_h"><p>Bumpers</p></div><div class="right_c_h"><p>Allows you to install sports bumpers on your car</p></div></div></a>
+				<a id="wings_menu"><div class="content_home"><div class="left_c_h"><p>Wings</p></div><div class="right_c_h"><p>Allows you to install branded wings on your car</p></div></div></a>				
+				<a id="lattice_menu"><div class="content_home"><div class="left_c_h"><p>Radiator screen</p></div><div class="right_c_h"><p>Allows you to change the design of the grille of your car</p></div></div></a>	
+            </div>
+        </div>
+        
+        
+        
+        <div class="footer">
+            <div class="left_part">
+                <p>Speed</p>
+                <progress id="speed_bar" value="50" max="100"></progress>
+                <p>Brakes</p>
+                <progress id="brakes_bar" value="50" max="100"></progress>
+            </div>
+            <div class="right_part">
+                <p>Acceleration</p>
+                <progress id="boost_bar" value="50" max="100"></progress>
+                <p>Clutch</p>
+                <progress id="clutch_bar" value="50" max="100"></progress>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="tuning.js"></script>
+</body>
+</html>

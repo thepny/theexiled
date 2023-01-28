@@ -1,0 +1,13 @@
+{
+	"name" : "THE EXILED - RP",
+	"url" : "https://exilenetwork.de",
+	"voice-chat" : true,
+	"voice-chat-sample-rate": 48000,
+	"language": "de",
+	"gamemode" : "roleplay", 
+	"announce" : true,
+	"csharp" : "enabled",
+	"port": 22005,
+	"stream-distance" : 250.0,
+	"maxplayers" : 100
+}

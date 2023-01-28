@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Spawn Select</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link type="text/css" rel="stylesheet" href="css/respawn.css" />
+	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/respawn.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("body").css("display", "none");
+
+            $("body").fadeIn(1000);
+
+        });
+    </script>
+</head>
+<body>
+	<div id="spawn-select">
+		<div id="home-spawn" class="flex-item select-block home">
+			<div class="title-block">
+				<div class="title-text">
+					<span class="bold">Your house</span>
+					<span class="desc-text"></span>
+				</div>
+			</div>
+			<div class="button-block">
+				<button onclick="spawn(2)" type="button" class="button">To appear</button>
+			</div>
+		</div>
+		<div id="last-spawn" class="flex-item select-block last">
+			<div class="title-block">
+				<div class="title-text">
+					<span class="bold">Output location</span>
+				</div>
+			</div>
+			<div class="button-block">
+				<button onclick="spawn(0)" type="button" class="button">To appear</button>
+			</div>
+		</div>
+		<div id="org-spawn" class="flex-item select-block org">
+			<div class="title-block">
+				<div class="title-text">
+					<span class="bold">Base fraction</span>
+					<span class="desc-text"></span>
+				</div>
+			</div>
+			<div class="button-block">
+				<button onclick="spawn(1)" type="button" class="button">To appear</button>
+			</div>
+		</div>
+        <div id="footer">
+			<a href="https://ragemp.pro"><img id="copyright" src="https://ragemp.pro/redage_v2_7c58cbe4a038e99bc84528e683f361d5/respawn.png?update=1" alt="RAGEMP.PRO"></a>
+		</div>
+	</div>
+</body>
+<script>
+window.onload = function() {
+	init();
+}</script>
+</html>
