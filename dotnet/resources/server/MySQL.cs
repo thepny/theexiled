@@ -23,8 +23,8 @@ namespace Redage.SDK
             Connection = 
                 $"Host={config.TryGet<string>("Server", "127.0.0.1")};" +
                 $"User={config.TryGet<string>("User", "redage")};" +
-                $"Password={config.TryGet<string>("Password", "Seeed1604$")};" + // Ваш пароль от бд в ""
-                $"Database={config.TryGet<string>("DataBase", "redage")};" + // Название вашей бд ( какое создадте - такое и будет)
+                $"Password={config.TryGet<string>("Password", "pw")};" + // db pw
+                $"Database={config.TryGet<string>("DataBase", "redage")};" + // db
                 $"{config.TryGet<string>("SSL", "SslMode=None;")}";
         }
 
